@@ -12,7 +12,7 @@
   ## Website:
   https://github.com/johnrip89/Tech-Blog
   
-  https://johnrip89.github.io/John-s-Portfolio/
+  https://nameless-gorge-50935.herokuapp.com/
 
   ## Contribution:
   Made by John Ripplinger
