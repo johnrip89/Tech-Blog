@@ -3,34 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just Tech News</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheet/style.css">
 </head>
 
-<body>
-    <div class="wrapper">
-        <header>
-            <nav>
-                {{#if loggedIn}}
-                <a href="/dashboard">dashboard</a>
-                <a href="/dashboard">dashboard</a>
-                <button id="logout" class="btn-no-style">logout</button>
-                {{else}}
-                <a href="/login">login</a>
-                {{/if}}
-            </nav>
-            <h1>
-                <a href="/">The Tech Blog</a>
-            </h1>            
-        </header>
-        <main>
-            {{{ body }}}
-        </main>
-        <footer>
-            Thanks for visiting!
-        </footer>
-    </div>
+<body class="bg-dark">
+    <header class="container bg-dark pb-2 ml-4 mt-4">
+        <nav class="row">
+            <div class="col-2">
+                <a href="/">Homepage</a>
+            </div>
+            <div class="col-2">
+                <a href="/dashboard">Dashboard</a>
+            </div>
+            {{#if loggedIn}}
+            <div class="col-2">
+                <a href="/dashboard" id="logout" class="no-style">Log Out</a>
+            </div>
+            {{else}}
+            <div class="col-2">
+                <a href="/login">Login</a>
+            </div>
+            {{/if}}
+        </nav>
+        <h1 class="text-left">
+            <a href="/">Tech Blog</a>
+        </h1>
+    </header>
+
+    <main class="bg-info">
+        {{{ body }}}
+    </main>
+
+    <footer>
+        Thanks for visiting!
+    </footer>
+
+
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}

@@ -1,30 +1,36 @@
-<section>
-    <h2>Create New Post</h2>
+<section class="container ml-4">
+    <h2 class="row">Create New Post</h2>
 
-    <form class="new-post-form">
-        <div>
+    <form class="row new-post-form">
+        <div class="col-2">
             <label for="post-title">Title</label>
+        </div>
+        <div class="col-10">
             <input type="text" id="post-title" name="post-title" />
         </div>
-        <div>
-            <label for="post-url">Link</label>
-            <input id="post-url" name="post-url" />
+        <div class="col-2">
+            <label for="content">Content</label>
         </div>
-        <button type="submit" class="btn">Create</button>
+        <div class="col-10">
+        <input id="content" name="content" />
+        </div>
+
+        <button type="submit" class="button col-2 mb-2">Create</button>
+
     </form>
 </section>
 
 {{#if posts.length}}
 <section>
     <h2>Your Posts</h2>
-    <ol>
+    <ul>
         {{#each posts as |post|}}
         <li>
             {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link text-warning">Edit post</a>
         </li>
         {{/each}}
-    </ol>
+    </ul>
 </section>
 {{/if}}
 
