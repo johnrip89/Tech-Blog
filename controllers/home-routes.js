@@ -1,4 +1,3 @@
-const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const router = require('express').Router();
 
@@ -57,7 +56,7 @@ router.get('/post/:id', (req, res) => {
         },
         attributes: [
             'id',
-            'content',
+            'post_url',
             'title',
             'created_at'            
         ],
